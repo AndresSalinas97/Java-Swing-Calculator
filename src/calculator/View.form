@@ -43,69 +43,63 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="equalButton" min="-2" pref="60" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="equalButton" min="-2" pref="60" max="-2" attributes="0"/>
                           <Component id="addButton" min="-2" pref="60" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="displayScrollPane" min="-2" pref="216" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="operationField" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="num4Button" min="-2" pref="60" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="num5Button" min="-2" pref="60" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="displayScrollPane" min="-2" pref="216" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="operationField" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="num4Button" min="-2" pref="60" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="num5Button" min="-2" pref="60" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="num7Button" min="-2" pref="60" max="-2" attributes="0"/>
+                                      <Component id="resetButton" min="-2" pref="60" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="num7Button" min="-2" pref="60" max="-2" attributes="0"/>
-                                          <Component id="allCancellButton" min="-2" pref="60" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="num8Button" min="-2" pref="60" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="num8Button" min="-2" pref="60" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="cancelEntryButton" min="-2" pref="60" max="-2" attributes="0"/>
-                                          </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="cleanButton" min="-2" pref="60" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="num9Button" min="-2" pref="60" max="-2" attributes="0"/>
-                                          <Component id="signButton" min="-2" pref="60" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="divButton" min="-2" pref="60" max="-2" attributes="0"/>
-                                          <Component id="mulButton" min="-2" pref="60" max="-2" attributes="0"/>
-                                      </Group>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="num9Button" min="-2" pref="60" max="-2" attributes="0"/>
+                                      <Component id="signButton" min="-2" pref="60" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="num6Button" min="-2" pref="60" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="subButton" min="-2" pref="60" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="divButton" min="-2" pref="60" max="-2" attributes="0"/>
+                                      <Component id="mulButton" min="-2" pref="60" max="-2" attributes="0"/>
                                   </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="num6Button" min="-2" pref="60" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="subButton" min="-2" pref="60" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -119,8 +113,8 @@
               </Group>
               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="allCancellButton" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                  <Component id="cancelEntryButton" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="resetButton" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="cleanButton" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                   <Component id="signButton" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                   <Component id="divButton" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
               </Group>
@@ -164,6 +158,7 @@
             <EtchetBorder/>
           </Border>
         </Property>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
@@ -181,6 +176,7 @@
                 <EmptyBorder/>
               </Border>
             </Property>
+            <Property name="focusable" type="boolean" value="false"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -198,101 +194,121 @@
             <EtchetBorder/>
           </Border>
         </Property>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="allCancellButton">
+    <Component class="javax.swing.JButton" name="resetButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="AC"/>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="cancelEntryButton">
+    <Component class="javax.swing.JButton" name="cleanButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="CE"/>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="signButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="+/-"/>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="divButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#xf7;"/>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="mulButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="x"/>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="subButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="-"/>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="addButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="+"/>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="equalButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="="/>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="dotButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="."/>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="num1Button">
       <Properties>
         <Property name="text" type="java.lang.String" value="1"/>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="num2Button">
       <Properties>
         <Property name="text" type="java.lang.String" value="2"/>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="num3Button">
       <Properties>
         <Property name="text" type="java.lang.String" value="3"/>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="num4Button">
       <Properties>
         <Property name="text" type="java.lang.String" value="4"/>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="num5Button">
       <Properties>
         <Property name="text" type="java.lang.String" value="5"/>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="num6Button">
       <Properties>
         <Property name="text" type="java.lang.String" value="6"/>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="num7Button">
       <Properties>
         <Property name="text" type="java.lang.String" value="7"/>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="num8Button">
       <Properties>
         <Property name="text" type="java.lang.String" value="8"/>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="num9Button">
       <Properties>
         <Property name="text" type="java.lang.String" value="9"/>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="num0Button">
       <Properties>
         <Property name="text" type="java.lang.String" value="0"/>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
     </Component>
   </SubComponents>
