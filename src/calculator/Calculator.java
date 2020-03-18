@@ -1,21 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package calculator;
 
 /**
+ * Calculator - Práctica 2 - Asignatura de Sistemas Interactivos.
  *
- * @author andres
+ * A simple calculator made with Java Swing following the MVC pattern.
+ *
+ * @author Andrés Salinas Lima <i52salia@uco.es>
  */
-public class Calculator {
+public final class Calculator {
 
     /**
+     * Starts the application.
+     *
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // Assemble all the pieces of the MVC
+        Model m = new Model();
+        View v = new View();
+        Controller c = new Controller(m, v);
+        c.initController();
     }
-    
 }
