@@ -1,5 +1,9 @@
 package calculator;
 
+import javax.swing.JButton;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+
 /**
  * The Calculator View.
  *
@@ -26,34 +30,302 @@ final class View extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
+        displayScrollPane = new javax.swing.JScrollPane();
+        displayField = new javax.swing.JTextField();
+        operationField = new javax.swing.JTextField();
+        allCancellButton = new javax.swing.JButton();
+        cancelEntryButton = new javax.swing.JButton();
+        signButton = new javax.swing.JButton();
+        divButton = new javax.swing.JButton();
+        mulButton = new javax.swing.JButton();
+        subButton = new javax.swing.JButton();
+        addButton = new javax.swing.JButton();
+        equalButton = new javax.swing.JButton();
+        dotButton = new javax.swing.JButton();
+        num1Button = new javax.swing.JButton();
+        num2Button = new javax.swing.JButton();
+        num3Button = new javax.swing.JButton();
+        num4Button = new javax.swing.JButton();
+        num5Button = new javax.swing.JButton();
+        num6Button = new javax.swing.JButton();
+        num7Button = new javax.swing.JButton();
+        num8Button = new javax.swing.JButton();
+        num9Button = new javax.swing.JButton();
+        num0Button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
-        jTextField1.setText("jTextField1");
+        displayScrollPane.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        displayField.setEditable(false);
+        displayField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        displayField.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        displayField.setText("1234567890,123");
+        displayField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        displayScrollPane.setViewportView(displayField);
+
+        operationField.setEditable(false);
+        operationField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        operationField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        operationField.setText("+");
+        operationField.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        allCancellButton.setText("AC");
+
+        cancelEntryButton.setText("CE");
+
+        signButton.setText("+/-");
+
+        divButton.setText("÷");
+
+        mulButton.setText("x");
+
+        subButton.setText("-");
+
+        addButton.setText("+");
+
+        equalButton.setText("=");
+
+        dotButton.setText(".");
+
+        num1Button.setText("1");
+
+        num2Button.setText("2");
+
+        num3Button.setText("3");
+
+        num4Button.setText("4");
+
+        num5Button.setText("5");
+
+        num6Button.setText("6");
+
+        num7Button.setText("7");
+
+        num8Button.setText("8");
+
+        num9Button.setText("9");
+
+        num0Button.setText("0");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(135, 135, 135)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(169, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(num1Button, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(num2Button, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(num0Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(dotButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(num3Button, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(equalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(displayScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(operationField))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(num4Button, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(num5Button, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(num7Button, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(allCancellButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(18, 18, 18)
+                                                .addComponent(num8Button, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(cancelEntryButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(num9Button, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(signButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(divButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(mulButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(num6Button, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(subButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(217, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(displayScrollPane)
+                    .addComponent(operationField, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(allCancellButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cancelEntryButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(signButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(divButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(num7Button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(num8Button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(num9Button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mulButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(num4Button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(num5Button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(num6Button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(subButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(num1Button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(num2Button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(num3Button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(num0Button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dotButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(equalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 11, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public JButton getAddButton() {
+        return addButton;
+    }
+
+    public JButton getAllCancellButton() {
+        return allCancellButton;
+    }
+
+    public JButton getCancelEntryButton() {
+        return cancelEntryButton;
+    }
+
+    public JTextField getDisplayField() {
+        return displayField;
+    }
+
+    public JScrollPane getDisplayScrollPane() {
+        return displayScrollPane;
+    }
+
+    public JButton getDivButton() {
+        return divButton;
+    }
+
+    public JButton getDotButton() {
+        return dotButton;
+    }
+
+    public JButton getEqualButton() {
+        return equalButton;
+    }
+
+    public JButton getMulButton() {
+        return mulButton;
+    }
+
+    public JButton getNum0Button() {
+        return num0Button;
+    }
+
+    public JButton getNum1Button() {
+        return num1Button;
+    }
+
+    public JButton getNum2Button() {
+        return num2Button;
+    }
+
+    public JButton getNum3Button() {
+        return num3Button;
+    }
+
+    public JButton getNum4Button() {
+        return num4Button;
+    }
+
+    public JButton getNum5Button() {
+        return num5Button;
+    }
+
+    public JButton getNum6Button() {
+        return num6Button;
+    }
+
+    public JButton getNum7Button() {
+        return num7Button;
+    }
+
+    public JButton getNum8Button() {
+        return num8Button;
+    }
+
+    public JButton getNum9Button() {
+        return num9Button;
+    }
+
+    public JTextField getOperationField() {
+        return operationField;
+    }
+
+    public JButton getSignButton() {
+        return signButton;
+    }
+
+    public JButton getSubButton() {
+        return subButton;
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton addButton;
+    private javax.swing.JButton allCancellButton;
+    private javax.swing.JButton cancelEntryButton;
+    private javax.swing.JTextField displayField;
+    private javax.swing.JScrollPane displayScrollPane;
+    private javax.swing.JButton divButton;
+    private javax.swing.JButton dotButton;
+    private javax.swing.JButton equalButton;
+    private javax.swing.JButton mulButton;
+    private javax.swing.JButton num0Button;
+    private javax.swing.JButton num1Button;
+    private javax.swing.JButton num2Button;
+    private javax.swing.JButton num3Button;
+    private javax.swing.JButton num4Button;
+    private javax.swing.JButton num5Button;
+    private javax.swing.JButton num6Button;
+    private javax.swing.JButton num7Button;
+    private javax.swing.JButton num8Button;
+    private javax.swing.JButton num9Button;
+    private javax.swing.JTextField operationField;
+    private javax.swing.JButton signButton;
+    private javax.swing.JButton subButton;
     // End of variables declaration//GEN-END:variables
 }
