@@ -14,7 +14,7 @@ import javax.swing.JTextField;
 final class View extends javax.swing.JFrame {
 
     /**
-     * Creates new form View for the Calculator.
+     * Constructor for the View class.
      */
     public View() {
         initComponents();
@@ -250,94 +250,181 @@ final class View extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Returns the addButton button.
+     * @return the addButton button.
+     */
     public JButton getAddButton() {
         return addButton;
     }
 
+    /**
+     * Returns the resetButton button.
+     * @return the resetButton button.
+     */
     public JButton getResetButton() {
         return resetButton;
     }
 
+    /**
+     * Returns the cleanButton button.
+     * @return the cleanButton button.
+     */
     public JButton getCleanButton() {
         return cleanButton;
     }
 
+    /**
+     * Returns the resultField field.
+     * @return the resultField field.
+     */
     public JTextField getResultField() {
         return resultField;
     }
 
+    /**
+     * Returns the resultScrollPane scroll pane.
+     * @return the resultScrollPane scroll pane.
+     */
     public JScrollPane getResultScrollPane() {
         return resultScrollPane;
     }
 
+    /**
+     * Returns the divButton button.
+     * @return the divButton button.
+     */
     public JButton getDivButton() {
         return divButton;
     }
 
+    /**
+     * Returns the dotButton button.
+     * @return the dotButton button.
+     */
     public JButton getDotButton() {
         return dotButton;
     }
 
+    /**
+     * Returns the equalButton button.
+     * @return the equalButton button.
+     */
     public JButton getEqualButton() {
         return equalButton;
     }
 
+    /**
+     * Returns the mulButton button.
+     * @return the mulButton button.
+     */
     public JButton getMulButton() {
         return mulButton;
     }
 
+    /**
+     * Returns the num0Button button.
+     * @return the num0Button button.
+     */
     public JButton getNum0Button() {
         return num0Button;
     }
 
+    /**
+     * Returns the num1Button button.
+     * @return the num1Button button.
+     */
     public JButton getNum1Button() {
         return num1Button;
     }
 
+    /**
+     * Returns the num2Button button.
+     * @return the num2Button button.
+     */
     public JButton getNum2Button() {
         return num2Button;
     }
 
+    /**
+     * Returns the num3Button button.
+     * @return the num3Button button.
+     */
     public JButton getNum3Button() {
         return num3Button;
     }
 
+    /**
+     * Returns the num4Button button.
+     * @return the num4Button button.
+     */
     public JButton getNum4Button() {
         return num4Button;
     }
 
+    /**
+     * Returns the num5Button button.
+     * @return the num5Button button.
+     */
     public JButton getNum5Button() {
         return num5Button;
     }
 
+    /**
+     * Returns the num6Button button.
+     * @return the num6Button button.
+     */
     public JButton getNum6Button() {
         return num6Button;
     }
 
+    /**
+     * Returns the num7Button button.
+     * @return the num7Button button.
+     */
     public JButton getNum7Button() {
         return num7Button;
     }
 
+    /**
+     * Returns the num8Button button.
+     * @return the num8Button button.
+     */
     public JButton getNum8Button() {
         return num8Button;
     }
 
+    /**
+     * Returns the num9Button button.
+     * @return the num9Button button.
+     */
     public JButton getNum9Button() {
         return num9Button;
     }
 
+    /**
+     * Returns the operationField field.
+     * @return the operationField field.
+     */
     public JTextField getOperationField() {
         return operationField;
     }
 
+    /**
+     * Returns the signButton button.
+     * @return the signButton button.
+     */
     public JButton getSignButton() {
         return signButton;
     }
 
+    /**
+     * Returns the subButton button.
+     * @return the subButton button.
+     */
     public JButton getSubButton() {
         return subButton;
     }
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;

@@ -3,14 +3,14 @@ package calculator;
 /**
  * Calculator - Práctica 2 - Asignatura de Sistemas Interactivos.
  *
- * A simple calculator made with Java Swing following the MVC pattern.
+ * A simple GUI based calculator made with Java Swing following the MVC pattern.
  *
  * @author Andrés Salinas Lima <i52salia@uco.es>
  */
 public final class Calculator {
 
     /**
-     * Starts the application.
+     * The main function: starts the application.
      *
      * @param args the command line arguments
      */

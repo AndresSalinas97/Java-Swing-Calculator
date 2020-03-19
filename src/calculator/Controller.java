@@ -1,7 +1,7 @@
 package calculator;
 
-import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 /**
  * The Calculator Controller.
@@ -40,9 +40,12 @@ final class Controller {
     private void initController() {
         bindButtons();
 
-        view.addKeyListener(new CalculatorKeyListener(this));
+        view.addKeyListener(new CalculatorControllerKeyListener(this));
     }
 
+    /**
+     * Binds the buttons with its actions.
+     */
     private void bindButtons() {
         view.getNum0Button().addActionListener(e -> pressNumberButton(0));
         view.getNum1Button().addActionListener(e -> pressNumberButton(1));
@@ -65,14 +68,36 @@ final class Controller {
         view.getDotButton().addActionListener(e -> pressDotButton());
     }
 
-    private final class CalculatorKeyListener implements KeyListener {
+    /**
+     * Key listener controller for the calculator.
+     *
+     * Allows the calculator to be used with the keyboard.
+     *
+     * Uses the typical key bindings in calculator programs with a few twists: -
+     * Keys S (sign) or M (minus) can be used instead of the sign button. - Keys
+     * C (cancel) or R (reset) can be used instead of the AC (all cancel)
+     * button. - Keys BACKSPACE or DELETE can be used instead of the CE (clean
+     * entry) button.
+     */
+    private final class CalculatorControllerKeyListener implements KeyListener {
 
         private final Controller controller;
 
-        public CalculatorKeyListener(Controller c) {
+        /**
+         * Constructor for the CalculatorControllerKeyListener class.
+         *
+         * @param c the calculator controller.
+         */
+        public CalculatorControllerKeyListener(Controller c) {
             controller = c;
         }
 
+        /**
+         * Calls the adequate method in the controller to handle the character just
+         * typed.
+         *
+         * @param e the key event to be handled.
+         */
         @Override
         public void keyTyped(KeyEvent e) {
             switch (e.getKeyChar()) {
@@ -140,10 +165,21 @@ final class Controller {
             }
         }
 
+        /**
+         * Does nothing but must be overridden.
+         * 
+         * @param e the key event to be handled.
+         */
         @Override
         public void keyPressed(KeyEvent e) {
         }
 
+        /**
+         * Calls the adequate method in the controller to handle the key just
+         * pressed and released.
+         * 
+         * @param e the key event to be handled.
+         */
         @Override
         public void keyReleased(KeyEvent e) {
             switch (e.getKeyCode()) {
@@ -158,11 +194,25 @@ final class Controller {
         }
     }
 
+    /**
+     * Manipulates the model and updates the view according to the numeric
+     * button that was pressed.
+     *
+     * @param n an integer from 0 to 9 indicating the numeric button that was
+     * pressed.
+     */
     private void pressNumberButton(int n) {
         System.out.println(n);
         view.getResultField().setText(String.valueOf(n));
     }
 
+    /**
+     * Manipulates the model and updates the view according to the operation
+     * button that was pressed.
+     * 
+     * @param op a char (+ - * or /) indicating the operation button that was
+     * pressed.
+     */
     private void pressOperationButton(char op) {
         switch (op) {
             case '+':
@@ -180,22 +230,42 @@ final class Controller {
         }
     }
 
+    /**
+     * Manipulates the model and updates the view in order to change the sign
+     * of the calculator input.
+     */
     private void pressSignButton() {
         System.out.println("Sign");
     }
 
+    /**
+     * Manipulates the model and updates the view in order to insert decimal
+     * separator (in this case is a dot).
+     */
     private void pressDotButton() {
         System.out.println("Dot");
     }
 
+    /**
+     * Manipulates the model and updates the view in order to clean the
+     * calculator input.
+     */
     private void pressCleanButton() {
         System.out.println("Clean");
     }
 
+    /**
+     * Manipulates the model and updates the view in order to reset the
+     * calculator.
+     */
     private void pressResetButton() {
         System.out.println("Reset");
     }
 
+    /**
+     * Manipulates the model and updates the view in order to calculate the
+     * result.
+     */
     private void pressEqualButton() {
         System.out.println("Equal");
     }
