@@ -14,7 +14,7 @@ final class Controller {
     private final View view;
 
     /**
-     * Creates new Controller for the Calculator.
+     * Constructor for class Controller.
      *
      * @param m the Calculator model
      * @param v the Calculator view
@@ -30,8 +30,15 @@ final class Controller {
      * Initializes the View.
      */
     private void initView() {
-        view.getResultField().setText("0");
-        view.getOperationField().setText("");
+        updateView();
+    }
+    
+    /**
+     * Updates the View to the current the Model state.
+     */
+    private void updateView() {
+        view.getResultField().setText(model.getResultDisplay());
+        view.getOperationField().setText(model.getOperationDisplay());
     }
 
     /**
@@ -84,7 +91,7 @@ final class Controller {
         private final Controller controller;
 
         /**
-         * Constructor for the CalculatorControllerKeyListener class.
+         * Constructor for class CalculatorControllerKeyListener.
          *
          * @param c the calculator controller.
          */
@@ -93,8 +100,8 @@ final class Controller {
         }
 
         /**
-         * Calls the adequate method in the controller to handle the character just
-         * typed.
+         * Calls the adequate method in the controller to handle the character
+         * just typed.
          *
          * @param e the key event to be handled.
          */
@@ -167,7 +174,7 @@ final class Controller {
 
         /**
          * Does nothing but must be overridden.
-         * 
+         *
          * @param e the key event to be handled.
          */
         @Override
@@ -177,7 +184,7 @@ final class Controller {
         /**
          * Calls the adequate method in the controller to handle the key just
          * pressed and released.
-         * 
+         *
          * @param e the key event to be handled.
          */
         @Override
@@ -202,40 +209,29 @@ final class Controller {
      * pressed.
      */
     private void pressNumberButton(int n) {
-        System.out.println(n);
-        view.getResultField().setText(String.valueOf(n));
+        model.insertNumber(n);
+        updateView();
     }
 
     /**
      * Manipulates the model and updates the view according to the operation
      * button that was pressed.
-     * 
+     *
      * @param op a char (+ - * or /) indicating the operation button that was
      * pressed.
      */
     private void pressOperationButton(char op) {
-        switch (op) {
-            case '+':
-                System.out.println("Add");
-                break;
-            case '-':
-                System.out.println("Sub");
-                break;
-            case '*':
-                System.out.println("Mul");
-                break;
-            case '/':
-                System.out.println("Div");
-                break;
-        }
+        model.setOperation(op);
+        updateView();
     }
 
     /**
-     * Manipulates the model and updates the view in order to change the sign
-     * of the calculator input.
+     * Manipulates the model and updates the view in order to change the sign of
+     * the calculator input.
      */
     private void pressSignButton() {
-        System.out.println("Sign");
+        model.switchSign();
+        updateView();
     }
 
     /**
@@ -243,7 +239,8 @@ final class Controller {
      * separator (in this case is a dot).
      */
     private void pressDotButton() {
-        System.out.println("Dot");
+        model.insertDot();
+        updateView();
     }
 
     /**
@@ -251,7 +248,8 @@ final class Controller {
      * calculator input.
      */
     private void pressCleanButton() {
-        System.out.println("Clean");
+        model.clean();
+        updateView();
     }
 
     /**
@@ -259,7 +257,9 @@ final class Controller {
      * calculator.
      */
     private void pressResetButton() {
-        System.out.println("Reset");
+        model.reset();
+        updateView();
+
     }
 
     /**
@@ -267,6 +267,7 @@ final class Controller {
      * result.
      */
     private void pressEqualButton() {
-        System.out.println("Equal");
+        model.calculate();
+        updateView();
     }
 }
