@@ -16,15 +16,13 @@ final class Model {
     private Double tempValue; // TODO: it could be a basic double
     private boolean insertingDecimals;
     private boolean operationSet;
+    private boolean inErrorMode;
 
     /**
      * Constructor for class Model.
      */
     public Model() {
-        resultDisplay = "0";
-        operationDisplay = "";
-        insertingDecimals = false;
-        operationSet = false;
+        reset();
     }
 
     public String getResultDisplay() {
@@ -36,6 +34,10 @@ final class Model {
     }
 
     public void insertNumber(int n) {
+        if (inErrorMode) {
+            return;
+        }
+
         if (resultDisplay.length() > MAX_INPUT_DIGITS) {
             return;
         }
@@ -50,6 +52,10 @@ final class Model {
     }
 
     public void insertDot() {
+        if (inErrorMode) {
+            return;
+        }
+
         if (!insertingDecimals) {
             resultDisplay += ".";
             insertingDecimals = true;
@@ -57,6 +63,10 @@ final class Model {
     }
 
     public void switchSign() {
+        if (inErrorMode) {
+            return;
+        }
+
         if (resultDisplay.charAt(0) == '-') {
             resultDisplay = resultDisplay.substring(1);
         } else if (!resultDisplay.equals("0")) {
@@ -65,6 +75,10 @@ final class Model {
     }
 
     public void setOperation(char op) {
+        if (inErrorMode) {
+            return;
+        }
+
         System.err.println(op);
 
         switch (op) {
@@ -80,19 +94,33 @@ final class Model {
     }
 
     public void calculate() {
+        if (inErrorMode) {
+            return;
+        }
+
         System.err.println("=");
     }
 
     public void clean() {
+        if (inErrorMode) {
+            return;
+        }
+
         resultDisplay = "0";
         insertingDecimals = false;
     }
 
     public void reset() {
-        System.err.println("AC");
+        resultDisplay = "0";
+        operationDisplay = "";
+        insertingDecimals = false;
+        operationSet = false;
+        inErrorMode = false;
     }
-    
+
     private void enterErrorMode() {
-        
+        inErrorMode = true;
+        resultDisplay = "Error";
+        operationDisplay = "";
     }
 }
