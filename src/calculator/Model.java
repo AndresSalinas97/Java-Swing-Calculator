@@ -7,16 +7,16 @@ package calculator;
  */
 final class Model {
 
-    private final int MAX_INPUT_DIGITS = 10;
-    private final int MAX_RESULT_DIGITS = 10;
-    private final int MAX_RESULT_DECIMALS = 3;
+    private final static int MAX_INPUT_DIGITS = 10;
+    private final static int MAX_RESULT_DIGITS = 10;
+    private final static int MAX_RESULT_DECIMALS = 3;
 
     private String resultDisplay;
     private String operationDisplay;
-    private Double tempValue; // TODO: it could be a basic double
+    private double tempValue;
     private boolean insertingDecimals;
-    private boolean operationSet;
     private boolean inErrorMode;
+    private boolean firstDigit;
 
     /**
      * Constructor for class Model.
@@ -42,10 +42,13 @@ final class Model {
             return;
         }
 
-        if (resultDisplay.equals("0")) {
-            if (n != 0) {
-                resultDisplay = String.valueOf(n);
-            }
+        if (n == 0 && resultDisplay.equals("0")) {
+            return;
+        }
+
+        if (firstDigit) {
+            resultDisplay = String.valueOf(n);
+            firstDigit = false;
         } else {
             resultDisplay += n;
         }
@@ -59,6 +62,7 @@ final class Model {
         if (!insertingDecimals) {
             resultDisplay += ".";
             insertingDecimals = true;
+            firstDigit = false;
         }
     }
 
@@ -69,7 +73,7 @@ final class Model {
 
         if (resultDisplay.charAt(0) == '-') {
             resultDisplay = resultDisplay.substring(1);
-        } else if (!resultDisplay.equals("0")) {
+        } else if (Double.valueOf(resultDisplay) != 0.0) {
             resultDisplay = "-" + resultDisplay;
         }
     }
@@ -79,18 +83,13 @@ final class Model {
             return;
         }
 
-        System.err.println(op);
+        calculate();
 
-        switch (op) {
-            case '+':
-                break;
-            case '-':
-                break;
-            case '*':
-                break;
-            case '/':
-                break;
-        }
+        tempValue = Double.valueOf(resultDisplay);
+
+        operationDisplay = String.valueOf(op);
+
+        firstDigit = true;
     }
 
     public void calculate() {
@@ -98,7 +97,37 @@ final class Model {
             return;
         }
 
-        System.err.println("=");
+        if (operationDisplay.isEmpty()) {
+            return;
+        }
+
+        char op = operationDisplay.charAt(0);
+        Double valueIndisplay = Double.valueOf(resultDisplay);
+
+        try {
+            Double result = doTheMath(op, tempValue, valueIndisplay);
+            resultDisplay = result.toString();
+            operationDisplay = "";
+            firstDigit = true;
+        } catch (Exception ex) {
+            enterErrorMode();
+        }
+    }
+
+    private static double doTheMath(char op, double v1, double v2)
+            throws Exception {
+        switch (op) {
+            case '+':
+                return v1 + v2;
+            case '-':
+                return v1 - v2;
+            case '×':
+                return v1 * v2;
+            case '÷':
+                return v1 / v2;
+            default:
+                return 0;
+        }
     }
 
     public void clean() {
@@ -107,15 +136,19 @@ final class Model {
         }
 
         resultDisplay = "0";
+        firstDigit = true;
         insertingDecimals = false;
     }
 
     public void reset() {
+        tempValue = 0.0;
+
         resultDisplay = "0";
-        operationDisplay = "";
+        firstDigit = true;
         insertingDecimals = false;
-        operationSet = false;
         inErrorMode = false;
+
+        operationDisplay = "";
     }
 
     private void enterErrorMode() {

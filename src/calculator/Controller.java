@@ -32,7 +32,7 @@ final class Controller {
     private void initView() {
         updateView();
     }
-    
+
     /**
      * Updates the View to the current the Model state.
      */
@@ -67,8 +67,8 @@ final class Controller {
         view.getResetButton().addActionListener(e -> pressResetButton());
         view.getCleanButton().addActionListener(e -> pressCleanButton());
         view.getSignButton().addActionListener(e -> pressSignButton());
-        view.getDivButton().addActionListener(e -> pressOperationButton('/'));
-        view.getMulButton().addActionListener(e -> pressOperationButton('*'));
+        view.getDivButton().addActionListener(e -> pressOperationButton('÷'));
+        view.getMulButton().addActionListener(e -> pressOperationButton('×'));
         view.getSubButton().addActionListener(e -> pressOperationButton('-'));
         view.getAddButton().addActionListener(e -> pressOperationButton('+'));
         view.getEqualButton().addActionListener(e -> pressEqualButton());
@@ -161,10 +161,10 @@ final class Controller {
                     controller.pressDotButton();
                     break;
                 case '/':
-                    controller.pressOperationButton('/');
+                    controller.pressOperationButton('÷');
                     break;
                 case '*':
-                    controller.pressOperationButton('*');
+                    controller.pressOperationButton('×');
                     break;
                 case '=':
                     controller.pressEqualButton();
@@ -217,7 +217,7 @@ final class Controller {
      * Manipulates the model and updates the view according to the operation
      * button that was pressed.
      *
-     * @param op a char (+ - * or /) indicating the operation button that was
+     * @param op a char (+ - × or ÷) indicating the operation button that was
      * pressed.
      */
     private void pressOperationButton(char op) {
