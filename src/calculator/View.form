@@ -203,6 +203,9 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Ubuntu" size="14" style="1"/>
         </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="AC"/>
         <Property name="focusable" type="boolean" value="false"/>
       </Properties>
@@ -211,6 +214,9 @@
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Ubuntu" size="14" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="a1" red="ff" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="CE"/>
         <Property name="focusable" type="boolean" value="false"/>
@@ -222,7 +228,7 @@
           <Font name="Ubuntu" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="62" red="ff" type="rgb"/>
+          <Color blue="0" green="a1" red="ff" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="+/-"/>
         <Property name="focusable" type="boolean" value="false"/>
@@ -234,7 +240,7 @@
           <Font name="Ubuntu" size="18" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="62" red="ff" type="rgb"/>
+          <Color blue="0" green="a1" red="ff" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="&#xf7;"/>
         <Property name="focusable" type="boolean" value="false"/>
@@ -246,7 +252,7 @@
           <Font name="Ubuntu" size="18" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="62" red="ff" type="rgb"/>
+          <Color blue="0" green="a1" red="ff" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="&#xd7;"/>
         <Property name="focusable" type="boolean" value="false"/>
@@ -258,7 +264,7 @@
           <Font name="Ubuntu" size="18" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="62" red="ff" type="rgb"/>
+          <Color blue="0" green="a1" red="ff" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="-"/>
         <Property name="focusable" type="boolean" value="false"/>
@@ -270,7 +276,7 @@
           <Font name="Ubuntu" size="18" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="62" red="ff" type="rgb"/>
+          <Color blue="0" green="a1" red="ff" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="+"/>
         <Property name="focusable" type="boolean" value="false"/>

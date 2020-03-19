@@ -14,7 +14,7 @@ import javax.swing.JTextField;
 final class View extends javax.swing.JFrame {
 
     /**
-     * Constructor for the View class.
+     * Constructor for class View.
      */
     public View() {
         initComponents();
@@ -77,35 +77,37 @@ final class View extends javax.swing.JFrame {
         operationField.setFocusable(false);
 
         resetButton.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
+        resetButton.setForeground(new java.awt.Color(255, 0, 0));
         resetButton.setText("AC");
         resetButton.setFocusable(false);
 
         cleanButton.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
+        cleanButton.setForeground(new java.awt.Color(255, 161, 0));
         cleanButton.setText("CE");
         cleanButton.setFocusable(false);
 
         signButton.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
-        signButton.setForeground(new java.awt.Color(255, 98, 0));
+        signButton.setForeground(new java.awt.Color(255, 161, 0));
         signButton.setText("+/-");
         signButton.setFocusable(false);
 
         divButton.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
-        divButton.setForeground(new java.awt.Color(255, 98, 0));
+        divButton.setForeground(new java.awt.Color(255, 161, 0));
         divButton.setText("÷");
         divButton.setFocusable(false);
 
         mulButton.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
-        mulButton.setForeground(new java.awt.Color(255, 98, 0));
+        mulButton.setForeground(new java.awt.Color(255, 161, 0));
         mulButton.setText("×");
         mulButton.setFocusable(false);
 
         subButton.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
-        subButton.setForeground(new java.awt.Color(255, 98, 0));
+        subButton.setForeground(new java.awt.Color(255, 161, 0));
         subButton.setText("-");
         subButton.setFocusable(false);
 
         addButton.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
-        addButton.setForeground(new java.awt.Color(255, 98, 0));
+        addButton.setForeground(new java.awt.Color(255, 161, 0));
         addButton.setText("+");
         addButton.setFocusable(false);
 
