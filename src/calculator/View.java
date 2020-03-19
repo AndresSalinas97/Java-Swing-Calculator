@@ -76,30 +76,45 @@ final class View extends javax.swing.JFrame {
         operationField.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         operationField.setFocusable(false);
 
+        resetButton.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
         resetButton.setText("AC");
         resetButton.setFocusable(false);
 
+        cleanButton.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
         cleanButton.setText("CE");
         cleanButton.setFocusable(false);
 
+        signButton.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
+        signButton.setForeground(new java.awt.Color(255, 98, 0));
         signButton.setText("+/-");
         signButton.setFocusable(false);
 
+        divButton.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        divButton.setForeground(new java.awt.Color(255, 98, 0));
         divButton.setText("÷");
         divButton.setFocusable(false);
 
-        mulButton.setText("x");
+        mulButton.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        mulButton.setForeground(new java.awt.Color(255, 98, 0));
+        mulButton.setText("×");
         mulButton.setFocusable(false);
 
+        subButton.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        subButton.setForeground(new java.awt.Color(255, 98, 0));
         subButton.setText("-");
         subButton.setFocusable(false);
 
+        addButton.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        addButton.setForeground(new java.awt.Color(255, 98, 0));
         addButton.setText("+");
         addButton.setFocusable(false);
 
+        equalButton.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        equalButton.setForeground(new java.awt.Color(255, 0, 0));
         equalButton.setText("=");
         equalButton.setFocusable(false);
 
+        dotButton.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         dotButton.setText(".");
         dotButton.setFocusable(false);
 
@@ -229,7 +244,7 @@ final class View extends javax.swing.JFrame {
                     .addComponent(num0Button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(dotButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(equalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 11, Short.MAX_VALUE))
+                .addGap(0, 6, Short.MAX_VALUE))
         );
 
         pack();
