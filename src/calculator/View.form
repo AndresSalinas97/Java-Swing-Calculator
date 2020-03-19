@@ -50,7 +50,7 @@
                   </Group>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="displayScrollPane" min="-2" pref="216" max="-2" attributes="0"/>
+                          <Component id="resultScrollPane" min="-2" pref="216" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="operationField" max="32767" attributes="0"/>
                       </Group>
@@ -109,7 +109,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="displayScrollPane" max="32767" attributes="0"/>
+                  <Component id="resultScrollPane" max="32767" attributes="0"/>
                   <Component id="operationField" min="-2" pref="55" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
@@ -152,7 +152,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JScrollPane" name="displayScrollPane">
+    <Container class="javax.swing.JScrollPane" name="resultScrollPane">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
@@ -164,7 +164,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTextField" name="displayField">
+        <Component class="javax.swing.JTextField" name="resultField">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">

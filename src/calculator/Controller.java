@@ -10,8 +10,8 @@ import java.awt.event.KeyEvent;
  */
 final class Controller {
 
-    private Model model;
-    private View view;
+    private final Model model;
+    private final View view;
 
     /**
      * Creates new Controller for the Calculator.
@@ -30,7 +30,7 @@ final class Controller {
      * Initializes the View.
      */
     private void initView() {
-        view.getDisplayField().setText("0");
+        view.getResultField().setText("0");
         view.getOperationField().setText("");
     }
 
@@ -42,7 +42,7 @@ final class Controller {
 
         view.addKeyListener(new CalculatorKeyListener(this));
     }
-    
+
     private void bindButtons() {
         view.getNum0Button().addActionListener(e -> pressNumberButton(0));
         view.getNum1Button().addActionListener(e -> pressNumberButton(1));
@@ -57,17 +57,17 @@ final class Controller {
         view.getResetButton().addActionListener(e -> pressResetButton());
         view.getCleanButton().addActionListener(e -> pressCleanButton());
         view.getSignButton().addActionListener(e -> pressSignButton());
-        view.getDivButton().addActionListener(e -> pressDivButton());
-        view.getMulButton().addActionListener(e -> pressMulButton());
-        view.getSubButton().addActionListener(e -> pressSubButton());
-        view.getAddButton().addActionListener(e -> pressAddButton());
+        view.getDivButton().addActionListener(e -> pressOperationButton('/'));
+        view.getMulButton().addActionListener(e -> pressOperationButton('*'));
+        view.getSubButton().addActionListener(e -> pressOperationButton('-'));
+        view.getAddButton().addActionListener(e -> pressOperationButton('+'));
         view.getEqualButton().addActionListener(e -> pressEqualButton());
         view.getDotButton().addActionListener(e -> pressDotButton());
     }
 
-    public class CalculatorKeyListener implements KeyListener {
+    private final class CalculatorKeyListener implements KeyListener {
 
-        private Controller controller;
+        private final Controller controller;
 
         public CalculatorKeyListener(Controller c) {
             controller = c;
@@ -119,20 +119,20 @@ final class Controller {
                     controller.pressSignButton();
                     break;
                 case '-':
-                    controller.pressSubButton();
+                    controller.pressOperationButton('-');
                     break;
                 case '+':
-                    controller.pressAddButton();
+                    controller.pressOperationButton('+');
                     break;
                 case '.':
                 case ',':
                     controller.pressDotButton();
                     break;
                 case '/':
-                    controller.pressDivButton();
+                    controller.pressOperationButton('/');
                     break;
                 case '*':
-                    controller.pressMulButton();
+                    controller.pressOperationButton('*');
                     break;
                 case '=':
                     controller.pressEqualButton();
@@ -160,42 +160,43 @@ final class Controller {
 
     private void pressNumberButton(int n) {
         System.out.println(n);
-        view.getDisplayField().setText(String.valueOf(n));
+        view.getResultField().setText(String.valueOf(n));
     }
 
-    private void pressResetButton() {
-        System.out.println("Reset");
-    }
-
-    private void pressCleanButton() {
-        System.out.println("Clean");
+    private void pressOperationButton(char op) {
+        switch (op) {
+            case '+':
+                System.out.println("Add");
+                break;
+            case '-':
+                System.out.println("Sub");
+                break;
+            case '*':
+                System.out.println("Mul");
+                break;
+            case '/':
+                System.out.println("Div");
+                break;
+        }
     }
 
     private void pressSignButton() {
         System.out.println("Sign");
     }
 
-    private void pressDivButton() {
-        System.out.println("Div");
+    private void pressDotButton() {
+        System.out.println("Dot");
     }
 
-    private void pressMulButton() {
-        System.out.println("Mul");
+    private void pressCleanButton() {
+        System.out.println("Clean");
     }
 
-    private void pressSubButton() {
-        System.out.println("Sub");
-    }
-
-    private void pressAddButton() {
-        System.out.println("Add");
+    private void pressResetButton() {
+        System.out.println("Reset");
     }
 
     private void pressEqualButton() {
         System.out.println("Equal");
-    }
-
-    private void pressDotButton() {
-        System.out.println("Dot");
     }
 }

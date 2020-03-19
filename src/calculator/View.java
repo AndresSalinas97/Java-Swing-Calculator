@@ -31,8 +31,8 @@ final class View extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        displayScrollPane = new javax.swing.JScrollPane();
-        displayField = new javax.swing.JTextField();
+        resultScrollPane = new javax.swing.JScrollPane();
+        resultField = new javax.swing.JTextField();
         operationField = new javax.swing.JTextField();
         resetButton = new javax.swing.JButton();
         cleanButton = new javax.swing.JButton();
@@ -58,16 +58,16 @@ final class View extends javax.swing.JFrame {
         setTitle("Calculator");
         setResizable(false);
 
-        displayScrollPane.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        displayScrollPane.setFocusable(false);
+        resultScrollPane.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        resultScrollPane.setFocusable(false);
 
-        displayField.setEditable(false);
-        displayField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        displayField.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        displayField.setText("1234567890,123");
-        displayField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        displayField.setFocusable(false);
-        displayScrollPane.setViewportView(displayField);
+        resultField.setEditable(false);
+        resultField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        resultField.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        resultField.setText("1234567890,123");
+        resultField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        resultField.setFocusable(false);
+        resultScrollPane.setViewportView(resultField);
 
         operationField.setEditable(false);
         operationField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
@@ -157,7 +157,7 @@ final class View extends javax.swing.JFrame {
                             .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(displayScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(resultScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
                             .addComponent(operationField))
                         .addGroup(layout.createSequentialGroup()
@@ -198,7 +198,7 @@ final class View extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(displayScrollPane)
+                    .addComponent(resultScrollPane)
                     .addComponent(operationField, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -247,12 +247,12 @@ final class View extends javax.swing.JFrame {
         return cleanButton;
     }
 
-    public JTextField getDisplayField() {
-        return displayField;
+    public JTextField getResultField() {
+        return resultField;
     }
 
-    public JScrollPane getDisplayScrollPane() {
-        return displayScrollPane;
+    public JScrollPane getResultScrollPane() {
+        return resultScrollPane;
     }
 
     public JButton getDivButton() {
@@ -327,8 +327,6 @@ final class View extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
     private javax.swing.JButton cleanButton;
-    private javax.swing.JTextField displayField;
-    private javax.swing.JScrollPane displayScrollPane;
     private javax.swing.JButton divButton;
     private javax.swing.JButton dotButton;
     private javax.swing.JButton equalButton;
@@ -345,6 +343,8 @@ final class View extends javax.swing.JFrame {
     private javax.swing.JButton num9Button;
     private javax.swing.JTextField operationField;
     private javax.swing.JButton resetButton;
+    private javax.swing.JTextField resultField;
+    private javax.swing.JScrollPane resultScrollPane;
     private javax.swing.JButton signButton;
     private javax.swing.JButton subButton;
     // End of variables declaration//GEN-END:variables
