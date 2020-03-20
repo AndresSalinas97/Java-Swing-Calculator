@@ -54,8 +54,8 @@ final class Model {
     /**
      * Inserts a new digit in the display.
      *
-     * If it is the firstDigit it should replace the value on display, if not,
-     * it will append it to the current value on display.
+     * If it is the firstDigit it will replace the value on display, if not, it
+     * will be appended to the current value on display.
      *
      * @param n the number to be introduced.
      */
@@ -107,6 +107,9 @@ final class Model {
      * To avoid changing the way the number is presented (number of decimal
      * places for example) this operation is made directly to the String without
      * converting it to double.
+     *
+     * When expecting the user to introduce a new number pressing the switch
+     * sign button will result in the display content being replaced by a '-'.
      */
     public void switchSign() {
         if (inErrorMode) {
@@ -126,6 +129,13 @@ final class Model {
         }
     }
 
+    /**
+     * Sets the operation to be calculated and calculates the previous operation
+     * if there is one.
+     *
+     * @param op a char ('+', '-', '×', or '÷') indicating the math operation to
+     * be set.
+     */
     public void setOperation(char op) {
         calculate();
 
@@ -144,6 +154,10 @@ final class Model {
         }
     }
 
+    /**
+     * Proceeds with the selected operation between the previous value on screen
+     * (stored on tempValue) and the current one.
+     */
     public void calculate() {
         if (inErrorMode) {
             return;
@@ -167,6 +181,16 @@ final class Model {
         }
     }
 
+    /**
+     * Performs the specified math operation.
+     *
+     * @param op a char ('+', '-', '×', or '÷') indicating the math operation to
+     * be calculated.
+     * @param v1 the first operand.
+     * @param v2 the second operand.
+     * @return the result of the mathematical operation.
+     * @throws ArithmeticException in case of division by 0, for example.
+     */
     private static double doTheMath(char op, double v1, double v2)
             throws ArithmeticException {
         double result = 0.0;
@@ -192,6 +216,13 @@ final class Model {
         return round(result, MAX_RESULT_DECIMALS);
     }
 
+    /**
+     * Rounds a double to the specified number of decimal places.
+     *
+     * @param value number to be rounded.
+     * @param places number of decimal places.
+     * @return rounded double.
+     */
     private static double round(double value, int places) {
         if (places < 0) {
             throw new IllegalArgumentException();
@@ -202,6 +233,9 @@ final class Model {
         return bd.doubleValue();
     }
 
+    /**
+     * Cleans the screen (but maintains operation and the stored tempValue).
+     */
     public void clean() {
         if (inErrorMode) {
             return;
@@ -211,6 +245,9 @@ final class Model {
         firstDigit = true;
     }
 
+    /**
+     * Resets the calculator.
+     */
     public void reset() {
         tempValue = 0.0;
 
@@ -221,6 +258,14 @@ final class Model {
         operationDisplay = "";
     }
 
+    /**
+     * Makes the calculator enter error mode.
+     *
+     * To be used during Exceptions.
+     *
+     * In this mode the display will show "Error" and only pressing the AC
+     * button can make it leave this state.
+     */
     private void enterErrorMode() {
         inErrorMode = true;
         resultDisplay = "Error";

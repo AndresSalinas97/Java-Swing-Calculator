@@ -80,11 +80,11 @@ final class Controller {
      *
      * Allows the calculator to be used with the keyboard.
      *
-     * Uses the typical key bindings in calculator programs with a few twists: -
-     * Keys S (sign) or M (minus) can be used instead of the sign button. - Keys
-     * C (cancel) or R (reset) can be used instead of the AC (all cancel)
-     * button. - Keys BACKSPACE or DELETE can be used instead of the CE (clean
-     * entry) button.
+     * Uses the typical key bindings in calculator programs with a few twists:
+     * Keys S (sign) or M (minus) can be used instead of the sign button. Keys C
+     * (cancel) or R (reset) can be used instead of the AC (all cancel) button.
+     * Keys BACKSPACE or DELETE can be used instead of the CE (clean entry)
+     * button.
      */
     private final class CalculatorControllerKeyListener implements KeyListener {
 
@@ -217,8 +217,8 @@ final class Controller {
      * Manipulates the model and updates the view according to the operation
      * button that was pressed.
      *
-     * @param op a char (+ - × or ÷) indicating the operation button that was
-     * pressed.
+     * @param op a char ('+', '-', '×', or '÷') indicating the operation button
+     * that was pressed.
      */
     private void pressOperationButton(char op) {
         model.setOperation(op);
