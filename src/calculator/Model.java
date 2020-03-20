@@ -116,14 +116,18 @@ final class Model {
             return;
         }
 
+        // Control we don't go over the limit of the display.
         if (resultDisplay.length() >= MAX_INPUT_DIGITS) {
             return;
         }
 
-        if (n == 0 && resultDisplay.equals("0")) {
+        // Control we don't have multiples 0s on the left.
+        if (n == 0 && resultDisplay.charAt(resultDisplay.length() - 1) == '0'
+                && !resultDisplay.contains(".")) {
             return;
         }
 
+        // Control wether we have to replace the display content or not.
         if (firstDigit) {
             resultDisplay = String.valueOf(n);
             firstDigit = false;
