@@ -112,8 +112,8 @@ final class Model {
         if (inErrorMode) {
             return;
         }
-        
-        if (firstDigit) {
+
+        if (firstDigit && !operationDisplay.isEmpty()) {
             resultDisplay = "-";
             firstDigit = false;
             return;
@@ -133,11 +133,15 @@ final class Model {
             return;
         }
 
-        tempValue = Double.valueOf(resultDisplay);
+        try {
+            tempValue = Double.valueOf(resultDisplay);
 
-        operationDisplay = String.valueOf(op);
+            operationDisplay = String.valueOf(op);
 
-        firstDigit = true;
+            firstDigit = true;
+        } catch (Exception e) {
+            enterErrorMode();
+        }
     }
 
     public void calculate() {
@@ -149,11 +153,12 @@ final class Model {
             return;
         }
 
-        char op = operationDisplay.charAt(0);
-        Double valueIndisplay = Double.valueOf(resultDisplay);
-
         try {
+            char op = operationDisplay.charAt(0);
+            Double valueIndisplay = Double.valueOf(resultDisplay);
+
             Double result = doTheMath(op, tempValue, valueIndisplay);
+
             resultDisplay = result.toString();
             operationDisplay = "";
             firstDigit = true;
