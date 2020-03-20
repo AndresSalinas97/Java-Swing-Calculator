@@ -4,6 +4,9 @@ package calculator;
  * Calculator - Práctica 2 - Asignatura de Sistemas Interactivos.
  *
  * A simple GUI based calculator made with Java Swing following the MVC pattern.
+ * 
+ * It works like a typical calculator in the sense that you can concatenate
+ * operations (without pressing the equal button in every step).
  *
  * @author Andrés Salinas Lima <i52salia@uco.es>
  */
