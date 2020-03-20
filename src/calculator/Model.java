@@ -116,45 +116,60 @@ final class Model {
             return;
         }
 
-        // Control we don't go over the limit of the display.
+        // Control we don't go over the limit of the display
         if (resultDisplay.length() >= MAX_INPUT_DIGITS) {
             return;
         }
 
-        // Control we don't have multiples 0s on the left.
-        if (n == 0 && resultDisplay.charAt(resultDisplay.length() - 1) == '0'
-                && !resultDisplay.contains(".")) {
-            return;
-        }
-
-        // Control wether we have to replace the display content or not.
+        // Control if we have to replace the display
         if (firstDigit) {
             resultDisplay = String.valueOf(n);
             firstDigit = false;
-        } else {
-            resultDisplay += n;
+            return;
         }
+
+        // Control we don't have 0s on the left
+        if (resultDisplay.equals("0")) {
+            resultDisplay = String.valueOf(n);
+            return;
+        }
+        if (resultDisplay.equals("-0")) {
+            resultDisplay = "-" + n;
+            return;
+        }
+        
+        resultDisplay += n;
     }
 
     /**
      * Inserts the dot decimal separator.
      *
      * It won't allow to have more than one dot at the same time.
+     *
+     * If it is the firstDigit it will add a 0 to the left.
      */
     public void insertDot() {
         if (inErrorMode) {
             return;
         }
 
+        // Control that if it is the firstDigit it will add a 0 to the left
+        if (firstDigit) {
+            resultDisplay = "0.";
+            firstDigit = false;
+            return;
+        }
+        if (resultDisplay.contains("-")) {
+            resultDisplay = "-0.";
+            return;
+        }
+
+        // Control we don't have more than one dot at the same time
         if (resultDisplay.contains(".")) {
             return;
         }
 
         resultDisplay += ".";
-
-        if (firstDigit) {
-            firstDigit = false;
-        }
     }
 
     /**
@@ -172,6 +187,7 @@ final class Model {
             return;
         }
 
+        // Control if we are expecting the user to introduce a new number
         if (firstDigit && !operationDisplay.isEmpty()) {
             resultDisplay = "-";
             firstDigit = false;
@@ -180,8 +196,12 @@ final class Model {
 
         if (resultDisplay.charAt(0) == '-') {
             resultDisplay = resultDisplay.substring(1);
-        } else if (Double.valueOf(resultDisplay) != 0.0) {
+        } else {
             resultDisplay = "-" + resultDisplay;
+        }
+
+        if (firstDigit) {
+            firstDigit = false;
         }
     }
 
@@ -200,10 +220,13 @@ final class Model {
         }
 
         try {
+            // Stores the current value on display so we don't loose it when the
+            // user introduces a new number
             tempValue = Double.valueOf(resultDisplay);
 
             operationDisplay = String.valueOf(op);
 
+            // After this operation we expect the user to introduce a new number
             firstDigit = true;
         } catch (Exception e) {
             enterErrorMode();
@@ -231,6 +254,8 @@ final class Model {
 
             resultDisplay = result.toString();
             operationDisplay = "";
+
+            // After this operation we expect the user to introduce a new number
             firstDigit = true;
         } catch (Exception e) {
             enterErrorMode();
