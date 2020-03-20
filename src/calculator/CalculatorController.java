@@ -8,10 +8,10 @@ import java.awt.event.KeyListener;
  *
  * @author Andrés Salinas Lima {@literal <i52salia@uco.es>}
  */
-final class Controller {
+final class CalculatorController {
 
-    private final Model model;
-    private final View view;
+    private final CalculatorModel model;
+    private final CalculatorView view;
 
     /**
      * Constructor for class Controller.
@@ -19,7 +19,7 @@ final class Controller {
      * @param m the Calculator model
      * @param v the Calculator view
      */
-    public Controller(Model m, View v) {
+    public CalculatorController(CalculatorModel m, CalculatorView v) {
         model = m;
         view = v;
         initView();
@@ -27,14 +27,14 @@ final class Controller {
     }
 
     /**
-     * Initializes the View.
+     * Initializes the CalculatorView.
      */
     private void initView() {
         updateView();
     }
 
     /**
-     * Updates the View to the current the Model state.
+     * Updates the CalculatorView to the current CalculatorModel state.
      */
     private void updateView() {
         view.getResultField().setText(model.getResultDisplay());
@@ -42,7 +42,7 @@ final class Controller {
     }
 
     /**
-     * Initializes the Controller.
+     * Initializes the CalculatorController.
      */
     private void initController() {
         bindButtons();
@@ -88,14 +88,14 @@ final class Controller {
      */
     private final class CalculatorControllerKeyListener implements KeyListener {
 
-        private final Controller controller;
+        private final CalculatorController controller;
 
         /**
          * Constructor for class CalculatorControllerKeyListener.
          *
          * @param c the calculator controller.
          */
-        public CalculatorControllerKeyListener(Controller c) {
+        public CalculatorControllerKeyListener(CalculatorController c) {
             controller = c;
         }
 

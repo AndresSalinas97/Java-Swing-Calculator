@@ -11,12 +11,12 @@ import javax.swing.JTextField;
  *
  * @author Andrés Salinas Lima {@literal <i52salia@uco.es>}
  */
-final class View extends javax.swing.JFrame {
+final class CalculatorView extends javax.swing.JFrame {
 
     /**
      * Constructor for class View.
      */
-    public View() {
+    public CalculatorView() {
         initComponents();
         setVisible(true);
         setFocusable(true);

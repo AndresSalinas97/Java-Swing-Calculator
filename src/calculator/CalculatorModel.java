@@ -8,7 +8,7 @@ import java.math.RoundingMode;
  *
  * @author Andrés Salinas Lima {@literal <i52salia@uco.es>}
  */
-final class Model {
+final class CalculatorModel {
 
     /**
      * Maximum number of digits that the user can introduce.
@@ -81,7 +81,7 @@ final class Model {
     /**
      * Constructor for class Model.
      */
-    public Model() {
+    public CalculatorModel() {
         reset();
     }
 
@@ -116,15 +116,15 @@ final class Model {
             return;
         }
 
-        // Control we don't go over the limit of the display
-        if (resultDisplay.length() >= MAX_INPUT_DIGITS) {
-            return;
-        }
-
         // Control if we have to replace the display
         if (firstDigit) {
             resultDisplay = String.valueOf(n);
             firstDigit = false;
+            return;
+        }
+
+        // Control we don't go over the limit of the display
+        if (resultDisplay.length() >= MAX_INPUT_DIGITS) {
             return;
         }
 
@@ -137,7 +137,7 @@ final class Model {
             resultDisplay = "-" + n;
             return;
         }
-        
+
         resultDisplay += n;
     }
 
@@ -189,7 +189,7 @@ final class Model {
 
         // Control if we are expecting the user to introduce a new number
         if (firstDigit && !operationDisplay.isEmpty()) {
-            resultDisplay = "-";
+            resultDisplay = "-0";
             firstDigit = false;
             return;
         }
@@ -257,7 +257,7 @@ final class Model {
 
             // After this operation we expect the user to introduce a new number
             firstDigit = true;
-        } catch (Exception e) {
+        } catch (NumberFormatException | ArithmeticException e) {
             enterErrorMode();
         }
     }

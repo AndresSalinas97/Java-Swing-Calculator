@@ -8,6 +8,8 @@ package calculator;
  * It works like a typical calculator in the sense that you can concatenate
  * operations (without pressing the equal button in every step).
  *
+ * Functionality and layout was inspired by the iPhone iOS 13 Calculator App.
+ *
  * @author Andrés Salinas Lima {@literal <i52salia@uco.es>}
  */
 public final class Calculator {
@@ -19,6 +21,6 @@ public final class Calculator {
      */
     public static void main(String[] args) {
         // Assemble all the pieces of the MVC
-        new Controller(new Model(), new View());
+        new CalculatorController(new CalculatorModel(), new CalculatorView());
     }
 }
