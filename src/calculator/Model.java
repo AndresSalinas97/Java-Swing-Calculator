@@ -10,13 +10,19 @@ import java.math.RoundingMode;
  */
 final class Model {
 
+    /**
+     * Maximum number of digits that the user can introduce.
+     */
     private final static int MAX_INPUT_DIGITS = 10;
+
+    /**
+     * Maximum number of decimal places the results will be rounded to.
+     */
     private final static int MAX_RESULT_DECIMALS = 5;
 
     private String resultDisplay;
     private String operationDisplay;
     private double tempValue;
-    private boolean insertingDecimals;
     private boolean inErrorMode;
     private boolean firstDigit;
 
@@ -27,14 +33,29 @@ final class Model {
         reset();
     }
 
+    /**
+     * Returns the current display content.
+     *
+     * @return the current display content.
+     */
     public String getResultDisplay() {
         return resultDisplay;
     }
 
+    /**
+     * Returns the current operation display content.
+     *
+     * @return the current operation display content.
+     */
     public String getOperationDisplay() {
         return operationDisplay;
     }
 
+    /**
+     * Inserts a new digit in the display.
+     *
+     * @param n the number to be introduced.
+     */
     public void insertNumber(int n) {
         if (inErrorMode) {
             return;
@@ -61,9 +82,13 @@ final class Model {
             return;
         }
 
-        if (!insertingDecimals) {
-            resultDisplay += ".";
-            insertingDecimals = true;
+        if (resultDisplay.contains(".")) {
+            return;
+        }
+
+        resultDisplay += ".";
+
+        if (firstDigit) {
             firstDigit = false;
         }
     }
@@ -137,7 +162,7 @@ final class Model {
                 result = v1 / v2;
                 break;
         }
-        
+
         return round(result, MAX_RESULT_DECIMALS);
     }
 
@@ -158,7 +183,6 @@ final class Model {
 
         resultDisplay = "0";
         firstDigit = true;
-        insertingDecimals = false;
     }
 
     public void reset() {
@@ -166,7 +190,6 @@ final class Model {
 
         resultDisplay = "0";
         firstDigit = true;
-        insertingDecimals = false;
         inErrorMode = false;
 
         operationDisplay = "";
