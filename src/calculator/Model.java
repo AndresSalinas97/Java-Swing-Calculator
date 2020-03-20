@@ -1,5 +1,8 @@
 package calculator;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 /**
  * The Calculator Model.
  *
@@ -8,8 +11,7 @@ package calculator;
 final class Model {
 
     private final static int MAX_INPUT_DIGITS = 10;
-    private final static int MAX_RESULT_DIGITS = 10;
-    private final static int MAX_RESULT_DECIMALS = 3;
+    private final static int MAX_RESULT_DECIMALS = 5;
 
     private String resultDisplay;
     private String operationDisplay;
@@ -80,7 +82,7 @@ final class Model {
 
     public void setOperation(char op) {
         calculate();
-        
+
         if (inErrorMode) {
             return;
         }
@@ -116,21 +118,37 @@ final class Model {
 
     private static double doTheMath(char op, double v1, double v2)
             throws ArithmeticException {
+        double result = 0.0;
+
         switch (op) {
             case '+':
-                return v1 + v2;
+                result = v1 + v2;
+                break;
             case '-':
-                return v1 - v2;
+                result = v1 - v2;
+                break;
             case '×':
-                return v1 * v2;
+                result = v1 * v2;
+                break;
             case '÷':
                 if (v2 == 0.0) {
                     throw new ArithmeticException("Division by 0");
                 }
-                return v1 / v2;
-            default:
-                return 0;
+                result = v1 / v2;
+                break;
         }
+        
+        return round(result, MAX_RESULT_DECIMALS);
+    }
+
+    private static double round(double value, int places) {
+        if (places < 0) {
+            throw new IllegalArgumentException();
+        }
+
+        BigDecimal bd = new BigDecimal(Double.toString(value));
+        bd = bd.setScale(places, RoundingMode.HALF_UP);
+        return bd.doubleValue();
     }
 
     public void clean() {
