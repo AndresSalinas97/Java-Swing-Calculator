@@ -56,6 +56,7 @@ final class View extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculator");
+        setLocationByPlatform(true);
         setResizable(false);
 
         resultScrollPane.setBorder(javax.swing.BorderFactory.createEtchedBorder());
