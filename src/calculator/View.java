@@ -9,7 +9,7 @@ import javax.swing.JTextField;
  *
  * Created (mostly) automatically by NetBeans.
  *
- * @author Andrés Salinas Lima <i52salia@uco.es>
+ * @author Andrés Salinas Lima {@literal <i52salia@uco.es>}
  */
 final class View extends javax.swing.JFrame {
 

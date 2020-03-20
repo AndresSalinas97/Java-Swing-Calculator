@@ -6,19 +6,71 @@ import java.math.RoundingMode;
 /**
  * The Calculator Model.
  *
- * @author Andrés Salinas Lima <i52salia@uco.es>
+ * @author Andrés Salinas Lima {@literal <i52salia@uco.es>}
  */
 final class Model {
 
     /**
      * Maximum number of digits that the user can introduce.
      */
-    private final static int MAX_INPUT_DIGITS = 10;
+    private final static int MAX_INPUT_DIGITS = 12;
 
     /**
      * Maximum number of decimal places the results will be rounded to.
      */
     private final static int MAX_RESULT_DECIMALS = 5;
+
+    /**
+     * Performs the specified math operation.
+     *
+     * @param op a char ('+', '-', '×', or '÷') indicating the math operation to
+     * be calculated.
+     * @param v1 the first operand.
+     * @param v2 the second operand.
+     * @return the result of the mathematical operation.
+     * @throws ArithmeticException in case of division by 0, for example.
+     */
+    private static double doTheMath(char op, double v1, double v2)
+            throws ArithmeticException {
+        double result = 0.0;
+
+        switch (op) {
+            case '+':
+                result = v1 + v2;
+                break;
+            case '-':
+                result = v1 - v2;
+                break;
+            case '×':
+                result = v1 * v2;
+                break;
+            case '÷':
+                if (v2 == 0.0) {
+                    throw new ArithmeticException("Division by 0");
+                }
+                result = v1 / v2;
+                break;
+        }
+
+        return round(result, MAX_RESULT_DECIMALS);
+    }
+
+    /**
+     * Rounds a double to the specified number of decimal places.
+     *
+     * @param value number to be rounded.
+     * @param places number of decimal places.
+     * @return rounded double.
+     */
+    private static double round(double value, int places) {
+        if (places < 0) {
+            throw new IllegalArgumentException();
+        }
+
+        BigDecimal bd = new BigDecimal(Double.toString(value));
+        bd = bd.setScale(places, RoundingMode.HALF_UP);
+        return bd.doubleValue();
+    }
 
     private String resultDisplay;
     private String operationDisplay;
@@ -64,7 +116,7 @@ final class Model {
             return;
         }
 
-        if (resultDisplay.length() > MAX_INPUT_DIGITS) {
+        if (resultDisplay.length() >= MAX_INPUT_DIGITS) {
             return;
         }
 
@@ -182,58 +234,6 @@ final class Model {
     }
 
     /**
-     * Performs the specified math operation.
-     *
-     * @param op a char ('+', '-', '×', or '÷') indicating the math operation to
-     * be calculated.
-     * @param v1 the first operand.
-     * @param v2 the second operand.
-     * @return the result of the mathematical operation.
-     * @throws ArithmeticException in case of division by 0, for example.
-     */
-    private static double doTheMath(char op, double v1, double v2)
-            throws ArithmeticException {
-        double result = 0.0;
-
-        switch (op) {
-            case '+':
-                result = v1 + v2;
-                break;
-            case '-':
-                result = v1 - v2;
-                break;
-            case '×':
-                result = v1 * v2;
-                break;
-            case '÷':
-                if (v2 == 0.0) {
-                    throw new ArithmeticException("Division by 0");
-                }
-                result = v1 / v2;
-                break;
-        }
-
-        return round(result, MAX_RESULT_DECIMALS);
-    }
-
-    /**
-     * Rounds a double to the specified number of decimal places.
-     *
-     * @param value number to be rounded.
-     * @param places number of decimal places.
-     * @return rounded double.
-     */
-    private static double round(double value, int places) {
-        if (places < 0) {
-            throw new IllegalArgumentException();
-        }
-
-        BigDecimal bd = new BigDecimal(Double.toString(value));
-        bd = bd.setScale(places, RoundingMode.HALF_UP);
-        return bd.doubleValue();
-    }
-
-    /**
      * Cleans the screen (but maintains operation and the stored tempValue).
      */
     public void clean() {
@@ -271,4 +271,5 @@ final class Model {
         resultDisplay = "Error";
         operationDisplay = "";
     }
+
 }

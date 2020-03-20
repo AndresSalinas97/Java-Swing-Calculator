@@ -6,7 +6,7 @@ import java.awt.event.KeyListener;
 /**
  * The Calculator Controller.
  *
- * @author Andrés Salinas Lima <i52salia@uco.es>
+ * @author Andrés Salinas Lima {@literal <i52salia@uco.es>}
  */
 final class Controller {
 
