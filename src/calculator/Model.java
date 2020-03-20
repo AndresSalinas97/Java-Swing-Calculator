@@ -54,6 +54,9 @@ final class Model {
     /**
      * Inserts a new digit in the display.
      *
+     * If it is the firstDigit it should replace the value on display, if not,
+     * it will append it to the current value on display.
+     *
      * @param n the number to be introduced.
      */
     public void insertNumber(int n) {
@@ -77,6 +80,11 @@ final class Model {
         }
     }
 
+    /**
+     * Inserts the dot decimal separator.
+     *
+     * It won't allow to have more than one dot at the same time.
+     */
     public void insertDot() {
         if (inErrorMode) {
             return;
@@ -93,8 +101,21 @@ final class Model {
         }
     }
 
+    /**
+     * Switches the sign of the value on display.
+     *
+     * To avoid changing the way the number is presented (number of decimal
+     * places for example) this operation is made directly to the String without
+     * converting it to double.
+     */
     public void switchSign() {
         if (inErrorMode) {
+            return;
+        }
+        
+        if (firstDigit) {
+            resultDisplay = "-";
+            firstDigit = false;
             return;
         }
 
