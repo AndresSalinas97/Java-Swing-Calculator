@@ -79,11 +79,11 @@ final class Model {
     }
 
     public void setOperation(char op) {
+        calculate();
+        
         if (inErrorMode) {
             return;
         }
-
-        calculate();
 
         tempValue = Double.valueOf(resultDisplay);
 
@@ -109,13 +109,13 @@ final class Model {
             resultDisplay = result.toString();
             operationDisplay = "";
             firstDigit = true;
-        } catch (Exception ex) {
+        } catch (Exception e) {
             enterErrorMode();
         }
     }
 
     private static double doTheMath(char op, double v1, double v2)
-            throws Exception {
+            throws ArithmeticException {
         switch (op) {
             case '+':
                 return v1 + v2;
@@ -124,6 +124,9 @@ final class Model {
             case '×':
                 return v1 * v2;
             case '÷':
+                if (v2 == 0.0) {
+                    throw new ArithmeticException("Division by 0");
+                }
                 return v1 / v2;
             default:
                 return 0;
