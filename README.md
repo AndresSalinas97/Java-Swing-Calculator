@@ -1,6 +1,6 @@
 # Java Swing MVC Calculator
 
-**Lab Assignment no. 2 for Interactive Systems Course**
+**Lab Assignment no. 2 for Interactive Systems course.**
 
 A simple GUI based calculator made with Java Swing following the MVC pattern.
 
