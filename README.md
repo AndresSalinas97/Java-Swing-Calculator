@@ -24,6 +24,6 @@ Documentation (javadoc) can be found [here](https://andressalinas97.github.io/Ja
 
 
 
-## Getting Started
+## Getting started
 
 This project was created using NetBeans IDE 8. You can import the project and start working on it or simply compile and run like in any other java project (the main class is `calculator.Calculator`).
