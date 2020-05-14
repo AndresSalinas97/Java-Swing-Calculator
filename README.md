@@ -14,7 +14,7 @@ Functionality and layout was inspired by the iPhone iOS 13 Calculator App.
 
 ## Authors
 
-* Andrés Salinas Lima ([i52salia@uco.es](mailto:i52salia@uco.es))
+* Andrés Salinas Lima
 
 
 
