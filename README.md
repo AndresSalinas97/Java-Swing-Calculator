@@ -10,19 +10,9 @@ Functionality and layout was inspired by the iPhone iOS 13 Calculator App.
 
 ![Image of the calculator running on MacOS](docs/images/CalculatorMacGUI.png)
 
-
-
-## Authors
-
-* Andrés Salinas Lima
-
-
-
 ## Documentation
 
 Documentation (javadoc) can be found [here](https://andressalinas97.github.io/Java-Swing-MVC-Calculator/javadoc/).
-
-
 
 ## Getting started
 
